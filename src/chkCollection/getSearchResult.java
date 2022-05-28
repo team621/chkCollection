@@ -18,18 +18,17 @@ public class getSearchResult {
 		}
 
 		result += "[Collection] " + collection +"\n";
-		result += "[TotalCount] " + search.w3GetResultTotalCount(collection) +"\n";
-		result += "[SearchField] "+ searchvo.getSearchField() +"\n";
 		result += "[DocumentField] " + searchvo.getDocumentField() +"\n";
+		result += "[SearchField] "+ searchvo.getSearchField() +"\n";
+		result += "[TotalCount] " + search.w3GetResultTotalCount(collection) +"\n";
 
-		if(errorCom != 0)
-			result += search.w3GetErrorInfo() + "\n";
-		else if(errorCol != 0)
-			result += "[Error] " + search.w3GetCollectionErrorInfo(collection) + "\n";
+		if(errorCom != 0) result += search.w3GetErrorInfo() + "\n";
+		else if(errorCol != 0) result += "[Error] " + search.w3GetCollectionErrorInfo(collection) + "\n";
 
 		result += "[searchResult бщ]\n";
 		String tempResult = "";
 
+		//프로세스 레이트
 		for(int i=0; i<totalCount; i++){
 			for(int j=0; j<docFieldArr.length; j++){
 				tempResult = search.w3GetField(collection, docFieldArr[j], i);

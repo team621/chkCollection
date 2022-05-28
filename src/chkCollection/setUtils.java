@@ -17,10 +17,10 @@ public class setUtils {
 		searchvo.setIP((String)properties.get("IP"));
 		searchvo.setPort(Integer.parseInt(properties.get("PORT").toString()));
 		searchvo.setCollection((String)properties.get("COLLECTION"));
-		searchvo.setSearchField((String)properties.get("SEARCHFIELD"));
 		searchvo.setDocumentField((String)properties.get("DOCUMENTFIELD"));
-		searchvo.setSort((String)properties.get("SORT"));
+		searchvo.setSearchField((String)properties.get("SEARCHFIELD"));
 		searchvo.setExquery((String)properties.get("EXQUERY"));
+		searchvo.setSort((String)properties.get("SORT"));
 
 		return searchvo;
 	}
@@ -49,4 +49,3 @@ public class setUtils {
 		return search;
 	}
 }
-
